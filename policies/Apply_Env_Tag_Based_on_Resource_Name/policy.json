@@ -14,7 +14,7 @@
    "allowedEnvironment": {
     "type": "String",
     "metadata": {
-     "displayName": "Allowed environment prefix: Ex: stage, prod, sim",
+     "displayName": "Allowed environment prefix by pattern: Ex: stage%, prod%, sim%",
      "description": "The list of allowed locations for resources."
     }
    },
