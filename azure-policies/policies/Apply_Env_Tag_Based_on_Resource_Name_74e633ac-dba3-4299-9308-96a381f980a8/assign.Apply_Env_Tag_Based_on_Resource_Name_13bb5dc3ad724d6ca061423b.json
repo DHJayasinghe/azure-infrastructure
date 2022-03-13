@@ -1,0 +1,42 @@
+{
+ "sku": {
+  "name": "A0",
+  "tier": "Free"
+ },
+ "identity": {
+  "principalId": "fd72460f-697b-4e80-a0a8-aefe5d0ef67d",
+  "tenantId": "69380036-9b93-4add-a715-9e8921d06841",
+  "type": "SystemAssigned"
+ },
+ "properties": {
+  "displayName": "Apply Env Tag Based on Resource Name",
+  "policyDefinitionId": "/subscriptions/480a55b5-9d7a-47b3-ae97-32cfff358189/providers/Microsoft.Authorization/policyDefinitions/74e633ac-dba3-4299-9308-96a381f980a8",
+  "scope": "/subscriptions/480a55b5-9d7a-47b3-ae97-32cfff358189",
+  "notScopes": [],
+  "parameters": {
+   "allowedEnvironment": {
+    "value": "staging*"
+   },
+   "tagName": {
+    "value": "env"
+   },
+   "tagValue": {
+    "value": "stage"
+   }
+  },
+  "description": "",
+  "metadata": {
+   "assignedBy": "Dhanuka Jayasinghe",
+   "parameterScopes": {},
+   "createdBy": "cbcc2a58-a82f-4c34-9142-6887614ccf36",
+   "createdOn": "2022-03-13T01:56:44.8853718Z",
+   "updatedBy": "cbcc2a58-a82f-4c34-9142-6887614ccf36",
+   "updatedOn": "2022-03-13T02:01:30.7554739Z"
+  },
+  "enforcementMode": "Default"
+ },
+ "id": "/subscriptions/480a55b5-9d7a-47b3-ae97-32cfff358189/providers/Microsoft.Authorization/policyAssignments/13bb5dc3ad724d6ca061423b",
+ "type": "Microsoft.Authorization/policyAssignments",
+ "name": "13bb5dc3ad724d6ca061423b",
+ "location": "westus2"
+}

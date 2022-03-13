@@ -1,0 +1,61 @@
+{
+ "properties": {
+  "displayName": "Apply Env Tag Based on Resource Name",
+  "policyType": "Custom",
+  "mode": "All",
+  "metadata": {
+   "category": "Tags",
+   "createdBy": "cbcc2a58-a82f-4c34-9142-6887614ccf36",
+   "createdOn": "2022-03-13T01:55:24.9188601Z",
+   "updatedBy": null,
+   "updatedOn": null
+  },
+  "parameters": {
+   "allowedEnvironment": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Allowed environment prefix: Ex: stage, prod, sim",
+     "description": "The list of allowed locations for resources."
+    }
+   },
+   "tagName": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Tag Name",
+     "description": "Name of the tag, such as 'environment'"
+    }
+   },
+   "tagValue": {
+    "type": "String",
+    "metadata": {
+     "displayName": "Tag Value",
+     "description": "Value of the tag, such as 'production'"
+    }
+   }
+  },
+  "policyRule": {
+   "if": {
+    "field": "name",
+    "like": "[parameters('allowedEnvironment')]"
+   },
+   "then": {
+    "effect": "modify",
+    "details": {
+     "roleDefinitionIds": [
+      "/providers/microsoft.authorization/roleDefinitions/b24988ac-6180-42a0-ab88-20f7382dd24c"
+     ],
+     "operations": [
+      {
+       "operation": "add",
+       "field": "[concat('tags[', parameters('tagName'), ']')]",
+       "value": "[parameters('tagValue')]"
+      }
+     ]
+    }
+   }
+  }
+ },
+ "id": "/subscriptions/480a55b5-9d7a-47b3-ae97-32cfff358189/providers/Microsoft.Authorization/policyDefinitions/74e633ac-dba3-4299-9308-96a381f980a8",
+ "type": "Microsoft.Authorization/policyDefinitions",
+ "name": "74e633ac-dba3-4299-9308-96a381f980a8"
+}
